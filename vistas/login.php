@@ -30,7 +30,7 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a><b>LOGIN</b></a>
+            <a><b>LOGIN ACT DESDE GUTHUB</b></a>
         </div>
         <div class="card">
             <div class="body">
