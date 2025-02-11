@@ -1186,6 +1186,25 @@ class Dao{
     }
 }
 
+	#FUNCION QUE PERMITE VALIDAR SI UN USUARIO PARA A SIDO REGISTRADO PARA EL INICIO DE SESION 
+	#------------------------------------------------------------
+	public function UsuarioRegistrado($usuario) {
+    $c = new Conexion();
+
+    try {
+        $conexion = $c->conectar();
+
+        $sql = "SELECT COUNT(*) AS total FROM usuario WHERE usuario = ?";
+        $stmt = $conexion->prepare($sql);
+        $stmt->execute([$usuario]);
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $resultado['total'] > 0;
+    } catch (Exception $e) {
+        return false;
+    }
+}
+
 
 
 
