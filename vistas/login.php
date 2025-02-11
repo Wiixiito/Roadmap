@@ -30,12 +30,12 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a><b>LOGIN ACT DESDE GUTHUB ahah</b></a>
+            <a><b>LOGIN wiixitoo</b></a>
         </div>
         <div class="card">
             <div class="body">
                 <form id="sign_in" method="POST">
-                    <div class="msg">Iniciar Sesión</div>
+                    <div class="msg">Iniciar Sesiónasdaasd</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
