@@ -1194,7 +1194,7 @@ class Dao{
     try {
         $conexion = $c->conectar();
 
-        $sql = "SELECT COUNT(*) AS total FROM usuario WHERE usuario = ?";
+        $sql = "SELECT COUNT(*) AS total FROM Usuario WHERE nombre_usuario = ?";
         $stmt = $conexion->prepare($sql);
         $stmt->execute([$usuario]);
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
