@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado</title>
+    <script>
+        window.onload = function() {
+            // Obtener el nombre de la URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var nombre = urlParams.get('nombre');
+            var nombrealumno = urlParams.get('nombrealumno');
+            
+            // Mostrar el nombre en el HTML
+            document.getElementById('nombre').innerText = nombre;
+            document.getElementById('nombrealumno').innerText = nombrealumno;
+
+            // Obtener la fecha actual
+            var fechaActual = new Date();
+            var dia = fechaActual.getDate();
+            var mes = fechaActual.getMonth() + 1;
+            var anio = fechaActual.getFullYear();
+            
+            // Formatear la fecha
+            var fechaFormateada = dia + ' de ' + _getMonthName(mes) + ' de ' + anio;
+
+            // Mostrar la fecha en el HTML
+            document.getElementById('fecha').innerText = fechaFormateada;
+        }
+
+        // Función para obtener el nombre del mes
+        function _getMonthName(month) {
+            var meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+            return meses[month - 1];
+        }
+    </script>
+    <style>
+       body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff 30%, #1176ed); /* Ajuste del gradiente */
+    min-height: 95vh;
+    font-family: 'Bradley Hand', cursive;
+}
+        /* Estilo para el contenedor */
+        .container {
+            width: 900px;
+            height: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+            text-align: left; /* Alinear todo el contenido a la izquierda */
+            background-color: transparent; /* Fondo transparente */
+        }
+        /* Estilo para el logo */
+        .logo {
+            float: left;
+            margin-right: 10px;
+        }
+        .logo img {
+            width: 300px;
+            height: 80px;
+        }
+        /* Estilo para el segundo logo */
+        .logo2 img {
+            width: 200px;
+            height: 180px;
+        }
+        .logo3 img {
+             float: left;
+            width: 200px;
+            height: 180px;
+        }
+        /* Estilo para el título */
+        .titulo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* Estilo para el nombre */
+        .nombre {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        /* Estilo para la fecha */
+        .fecha {
+            text-align: center;
+        }
+        /* Estilo para el botón de imprimir */
+        #imprimir {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Estilo para la impresión */
+        @media print {
+            #imprimir {
+                display: none;
+            }
+            @page {
+                size: landscape;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="fotos/siigo.png" alt="Logo izquierdo">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="titulo">
+            <h4>CERTIFICADO DE FINALIZACIÓN</h4>
+            <div class="message"><h4>Por su destacada participación y dedicación en este curso otorgamos el certificado de:</h4></div>
+            <div class="nombre">
+            <h1 id="nombre"> </h1>
+            
+        </div>
+        </div>
+        <div class="logo2" style="text-align: center;">
+            <img src="fotos/win.png" alt="Logo izquierdo">
+        </div>
+
+        <div class="nombre">
+           
+            <p>Instructores: Producto Siigo Latam<span id="nombre"></span></p>
+        </div>
+        <h2 style="text-align: center;" id="nombrealumno"> </h2>
+        <div class="fecha">
+             
+            <h3>Fecha: <span id="fecha">Fecha Actual</span></h3>
+        </div>
+
+        <button id="imprimir" onclick="window.print()">Descargar/Imprimir Certificado</button>
+    </div>
+</body>
+</html>

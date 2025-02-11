@@ -1,0 +1,9 @@
+🔍 Resultado de la consulta: {"id":3}
+🔍 Resultado de la consulta: {"id":4}
+🔍 Resultado de la consulta: {"id":4}
+🔍 Resultado de la consulta: {"id":4}
+🔍 Resultado de la consulta: {"id":4}
+🔍 Resultado de la consulta: {"id":4}
+🔍 Resultado de la consulta: {"id":5}
+🔍 Resultado de la consulta: {"id":5}
+🔍 Resultado de la consulta: {"id":5}
