@@ -21,5 +21,5 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 $response = curl_exec($ch);
 curl_close($ch);
 
-// Enviar respuesta al cliente
+// Enviar respuesta al clienteasd
 echo $response;
