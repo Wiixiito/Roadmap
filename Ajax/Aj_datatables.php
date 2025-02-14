@@ -101,12 +101,7 @@ if (isset($_GET['Requerimiento'])) {
     }
 
 
-        if($_GET['Requerimiento'] == "ConsultaDatatableEquipo"){
-
-
-            $dao = new Dao();
-
-            $sql = 'SELECT 
+        $sql = "SELECT 
     p.codigo, 
     p.nombre,
     GROUP_CONCAT(DISTINCT CASE WHEN c.nombre = 'Product Owner' THEN u.nombre_usuario END SEPARATOR ', ') AS `Product Owner`,
@@ -120,13 +115,7 @@ if (isset($_GET['Requerimiento'])) {
     INNER JOIN Cargo c ON c.id = a.id_cargo
     INNER JOIN Usuario u ON u.id = a.id_usuario
     GROUP BY p.codigo, p.nombre
-    ORDER BY p.nombre ASC';
-                    
-                    
-            $dao->ConsultarSqlNativoAjax($sql);
-
-    
-   }
+    ORDER BY p.nombre ASC";
 
    
    
