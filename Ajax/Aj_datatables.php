@@ -101,6 +101,33 @@ if (isset($_GET['Requerimiento'])) {
     }
 
 
+        if($_GET['Requerimiento'] == "ConsultaDatatableEquipo"){
+
+
+            $dao = new Dao();
+
+            $sql = 'SELECT 
+    p.codigo, 
+    p.nombre,
+    GROUP_CONCAT(DISTINCT CASE WHEN c.nombre = 'Product Owner' THEN u.nombre_usuario END SEPARATOR ', ') AS `Product Owner`,
+    GROUP_CONCAT(DISTINCT CASE WHEN c.nombre = 'Product Manager' THEN u.nombre_usuario END SEPARATOR ', ') AS `Product Manager`,
+    GROUP_CONCAT(DISTINCT CASE WHEN c.nombre = 'VP OF Engineering' THEN u.nombre_usuario END SEPARATOR ', ') AS `VP OF Engineering`,
+    GROUP_CONCAT(DISTINCT CASE WHEN c.nombre = 'QA Lead' THEN u.nombre_usuario END SEPARATOR ', ') AS `QA Lead`,
+    GROUP_CONCAT(DISTINCT CASE WHEN c.nombre = 'Tech Lead' THEN u.nombre_usuario END SEPARATOR ', ') AS `Tech Lead`,
+    GROUP_CONCAT(DISTINCT CASE WHEN c.nombre = 'Project Management Office' THEN u.nombre_usuario END SEPARATOR ', ') AS `Project Management Office`
+    FROM Proyecto p
+    INNER JOIN Asignaciones a ON p.id = a.id_proyecto
+    INNER JOIN Cargo c ON c.id = a.id_cargo
+    INNER JOIN Usuario u ON u.id = a.id_usuario
+    GROUP BY p.codigo, p.nombre
+    ORDER BY p.nombre ASC';
+                    
+                    
+            $dao->ConsultarSqlNativoAjax($sql);
+
+    
+   }
+
    
    
 
